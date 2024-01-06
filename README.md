@@ -3,7 +3,7 @@
 
 CalCium is a versatile JS calculator application designed to provide a comprehensive set of features for various mathematical computations. Whether you're a student, professional, or math enthusiast, this app offers a user-friendly interface with essential functionalities.
 
-**(Pronounced: Calk-ium)**
+**(Pronounced: Calk-ium)** 
 <br><br>
 
 Features ✨
