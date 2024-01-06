@@ -1,0 +1,171 @@
+body {
+	background: #00aa77;
+	background-image: url("media/ZenBG.png");
+	background-repeat: repeat-x, repeat;
+}
+
+
+@keyframes circle-in {
+	from {
+		width: 10vw;
+		height: 10vw;
+	}
+	to {
+		width: 70vw;
+		height: 70vw;
+	}
+}
+
+.circle {
+	position: fixed;
+	width: 70vw;
+	height: 70vw;
+	border-radius: 50%;
+	background-color: white;
+	left: 50%;
+	top: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	animation: 1s circle-in;
+}
+
+
+#calculator { 
+	border: 1px solid black;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+} 
+  
+#calculator input[type="button"] { 
+	width: 100%; 
+	padding: 10px 20px;
+	font-size: 24px; 
+	font-weight: bold; 
+	border-radius: 5px;
+	transition-duration: 0.4s;
+}
+
+
+.operand-btn {
+	color: white; 
+	background-color: dodgerblue;
+	border: 3px solid dodgerblue;
+	background-size: cover;
+	background-position: center;
+	border-radius: 4px;
+	transition: all 0.7s ease;
+}
+
+.operand-btn:hover {
+	transform: scale(1.2) rotate(3deg);
+	border-color: black;
+	background-image: linear-gradient(45deg, white 5%, dodgerblue 5%, dodgerblue 10%, white 10%, white 15%, dodgerblue 15%, dodgerblue 20%, white 20%, white 25%, dodgerblue 25%);
+}
+
+
+.operation-btn {
+	color: white; 
+	background-color: crimson;
+	border: 3px solid crimson; 
+}
+
+.operation-btn:hover {
+	background-color: white;
+	color: crimson;
+}
+
+.func-btn {
+	color: white; 
+	background-color: #0c9988;
+	border: 3px solid #0c9988;
+}
+
+.func-btn:hover {
+	background-color: white;
+	color: #0c9988;
+}
+
+.format-btn {
+	color: white; 
+	background-color: #0c0908;
+	border: 3px solid #0c0908;
+	
+}
+
+.format-btn:hover {
+	color: white; 
+	background-color: white;
+	color: #0c0908;
+}
+
+.trig-btn {
+	color: white; 
+	background-color: #fb914e;
+	border: 3px solid #fb914e;
+}
+
+.trig-btn:hover {
+	background-color: white;
+	color: #fb914e;
+}
+
+.log-btn {
+	color: white; 
+	background-color: #4942E4;
+	border: 3px solid #4942E4;
+}
+
+.log-btn:hover {
+	background-color: white;
+	color: #4942E4;
+}
+
+.control-btn {
+	color: white; 
+	background-color: #001F3F;
+	border: 3px solid #001F3F;
+}
+
+.control-btn:hover {
+	background-color: white;
+	color: #001F3F;
+}
+
+.comb-btn {
+	color: white; 
+	background-color: #DA0C81;
+	border: 3px solid #DA0C81;
+}
+
+.comb-btn:hover {
+	background-color: white;
+	color: #DA0C81;
+}
+
+.eqsolve-btn {
+	color: white; 
+	background-color: #940B92;
+	border: 3px solid #940B92;
+}
+
+.eqsolve-btn:hover {
+	background-color: white;
+	color: #940B92;
+}
+
+
+
+#calculator input[type="text"] {
+	width: 100%;
+	padding: 20px 30px; 
+	font-size: 24px; 
+	font-weight: bold; 
+	border: none; 
+	border-radius: 5px; 
+	border: 3px solid black; 
+}
+

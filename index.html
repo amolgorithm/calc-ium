@@ -1,0 +1,126 @@
+<!-- Copyright (C) Amol Sriprasadh 2024. All rights Reserved. -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CalCium</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script> 
+		<script src="https://cdn.jsdelivr.net/npm/nerdamer@latest/nerdamer.core.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/nerdamer@latest/Algebra.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/nerdamer@latest/Calculus.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/nerdamer@latest/Solve.js"></script>
+		<script src="https://unpkg.com/mathjs/lib/browser/math.js"></script>
+		<script src="./script.js" defer></script>
+		<link rel="stylesheet" href="./style.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+	</head>
+	<body>
+	<div id="body-div">
+		<h1 style="font-family: 'Roboto', sans-serif; color: white;">By Amol Sriprasadh</h1>
+		<div class="circle"></div>
+		
+		<button id="graph-return" style="display: none;" onclick="revertGraph();">back</button>
+		<canvas id="graph"></canvas>
+		
+		<table id="calculator"> 
+			<tr> 
+				<td colspan="9"> 
+					<input type="text" id="result" value="0"> 
+				</td>
+				<td><input type="button" class="format-btn" value="↶" onclick="undoResult();" style="padding: 10px 0px; width: 55%;"></td>
+			</tr> 
+			
+			<tr>
+				<td><input type="button" class="comb-btn" value="nPr" onclick="combinatoricsFunc('P');"></td>
+				
+				<td><input type="button" class="trig-btn" value="sin" onclick="trigFunc('sin');"></td>
+				<td><input type="button" class="trig-btn" value="cos" onclick="trigFunc('cos');"></td>
+				<td><input type="button" class="trig-btn" value="tan" onclick="trigFunc('tan');"></td>
+				
+				<td><input type="button" class="operand-btn" value="e" onclick="addOperandNumber('e');"></td>
+				<td><input type="button" class="operand-btn" value="π" onclick="addOperandNumber('PI');"></td>
+				<td nowrap>
+					<input type="button" class="operand-btn" value="(" onclick="resultBox.value += '(';" style="padding: 10px 0px; width: 47%;">
+					<input type="button" class="operand-btn" value=")" onclick="resultBox.value += ')';" style="padding: 10px 0px; width: 47%;">
+				</td>
+				
+				<td><input type="button" class="operation-btn" value="^" onclick="addOperator('**');"></td>
+				<td><input type="button" class="func-btn" value="Γ(x)" onclick="simpleFunc('g');"></td>
+				<td><input type="button" class="func-btn" value="y√x" onclick="simpleFunc('t');"></td>
+			</tr>
+	  
+			<tr>
+				<td><input type="button" class="comb-btn" value="nCr" onclick="combinatoricsFunc('C');"></td>
+				
+				<td><input type="button" class="trig-btn" value="csc" onclick="trigFunc('csc');"></td>
+				<td><input type="button" class="trig-btn" value="sec" onclick="trigFunc('sec');"></td>
+				<td><input type="button" class="trig-btn" value="cot" onclick="trigFunc('cot');"></td>
+				
+				<td><input type="button" class="operand-btn" value="7" onclick="addOperandNumber(7);"></td> 
+				<td><input type="button" class="operand-btn" value="8" onclick="addOperandNumber(8);"></td> 
+				<td><input type="button" class="operand-btn" value="9" onclick="addOperandNumber(9);"></td> 
+				<td><input type="button" class="operation-btn" value="/" onclick="addOperator('/');"></td>
+				<td><input type="button" class="func-btn" value="|x|" onclick="simpleFunc('a');"></td>
+				<td><input type="button" class="operation-btn" value="mod" onclick="addOperator('%');"></td>
+			</tr> 
+			<tr>
+				<td><input type="button" class="extra-btn" value="[::]" onclick=""></td>
+				
+				<td><input type="button" class="trig-btn" value="sinh" onclick="trigFunc('sinh');"></td>
+				<td><input type="button" class="trig-btn" value="cosh" onclick="trigFunc('cosh');"></td>
+				<td><input type="button" class="trig-btn" value="tanh" onclick="trigFunc('tanh');"></td>
+				
+				<td><input type="button" class="operand-btn" value="4" onclick="addOperandNumber(4);"></td> 
+				<td><input type="button" class="operand-btn" value="5" onclick="addOperandNumber(5);"></td> 
+				<td><input type="button" class="operand-btn" value="6" onclick="addOperandNumber(6);"></td> 
+				<td><input type="button" class="operation-btn" value="*" onclick="addOperator('*');"></td>
+				<td><input type="button" class="func-btn" value="⌊x⌉"  onclick="simpleFunc('r');"></td>
+				<td><input type="button" class="format-btn" value="C" onclick="formatDeletion('C');"></td>
+			</tr> 
+			<tr>
+				<td nowrap>
+					<input type="button" class="eqsolve-btn" value="x" onclick="addOperandNumber('x');" style="padding: 10px 0px; width: 39%;">
+					<input type="button" class="eqsolve-btn" value="x=y" onclick="addEqualSign();" style="padding: 10px 0px; width: 58%;">
+				</td>
+				
+				<td><input type="button" class="trig-btn" value="csch" onclick="trigFunc('csch');"></td>
+				<td><input type="button" class="trig-btn" value="sech" onclick="trigFunc('sech');"></td>
+				<td><input type="button" class="trig-btn" value="coth" onclick="trigFunc('coth');"></td>
+				
+				<td><input type="button" class="operand-btn" value="1" onclick="addOperandNumber(1);"></td> 
+				<td><input type="button" class="operand-btn" value="2" onclick="addOperandNumber(2);"></td> 
+				<td><input type="button" class="operand-btn" value="3" onclick="addOperandNumber(3);"></td> 
+				<td><input type="button" class="operation-btn" value="-" onclick="addOperator('-');"></td>
+				<td><input type="button" class="func-btn" value="⌈x⌉"  onclick="simpleFunc('c');"></td>
+				<td><input type="button" class="format-btn" value="CE" onclick="formatDeletion('CE');"></td>
+			</tr> 
+			<tr>
+				<td><input type="button" class="eqsolve-btn" value="solve-x" onclick="solveEquation();"></td>
+				
+				<td><input type="button" class="control-btn" value="INV" onclick="switchInvMode();"></td>
+				<td><input type="button" class="log-btn" value="logᵧ(x)" onclick="logFunc('logy');"></td>
+				<td><input type="button" class="log-btn" value="ln" onclick="logFunc('ln');"></td>
+				
+				<td nowrap>
+					<input type="button" class="operand-btn" value="," onclick="resultBox.value += ',';" style="padding: 10px 0px; width: 46%;">
+					<input type="button" class="operand-btn" value="." onclick="addDecimal();" style="padding: 10px 0px; width: 46%;">
+				</td>
+				<td><input type="button" class="operand-btn" value="0" onclick="addOperandNumber(0);"></td> 
+				<td><input type="button" class="operand-btn" value="±" onclick="negate();"></td> 
+				<td><input type="button" class="operation-btn" value="+" onclick="addOperator('+');"></td>
+				<td><input type="button" class="func-btn" value="⌊x⌋"  onclick="simpleFunc('f');"></td>
+				<td><input type="button" class="format-btn" value="=" onclick="evaluateResult();"></td>
+			</tr>
+			 <tr> 
+				<td><input type="button" class="eqsolve-btn" value="graph-xp" onclick="graphExpression();"></td>
+			</tr> 
+			<tr>
+				<td><input type="button" class="eqsolve-btn" value="graph-sol" onclick="graphSolution();"></td>
+			</tr>
+		</table>
+		</div>
+	</body>
+</html>
